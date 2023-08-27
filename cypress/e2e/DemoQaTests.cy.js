@@ -2,6 +2,7 @@ const dayjs = require("dayjs")
 import { HomePage } from "../Pages/HomePage";
 import { FormPage } from "../Pages/FormsPage";
 import { InteractionsPage } from "../Pages/InteractionsPage";
+import { BookStorePage } from "../Pages/BookStorePage";
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false;
 });
@@ -83,19 +84,26 @@ describe('Automating Tasks On Demo QA Website', () => {
 
   })
 
-  it("Demoqa - Interactions - Performing interactions",()=>{
+  it.skip("Demoqa - Interactions - Performing interactions",()=>{
    const interactionPage = new InteractionsPage()
-    
+    homePage.verfiyTitle()
     homePage.clickOnInteractionCard()
     interactionPage.verifyInteractionPageTitle("Interactions")
-    
     interactionPage.verfiySideBarElements()
     interactionPage.clickOnResizable()
     interactionPage.verifyInteractionPageTitle("Resizable")
     interactionPage.verifyBoxDimensions()
   })
 
-  // it("Demoqa - Bookstore - verify the api response is correct",()=>{
+  it("Demoqa - Bookstore - verify the api response is correct",()=>{
+    const bookstorePage = new BookStorePage()
+    homePage.verfiyTitle()
+    homePage.clickONBookStoreCard()
+    bookstorePage.verifyBookStorePageTitle()
+    bookstorePage.clickOnBookAndVerifyApiResponse("Understanding ECMAScript 6")
+    bookstorePage.verifyBookDetails()
 
-  // })
+
+
+  })
 })

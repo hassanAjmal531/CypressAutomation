@@ -3,6 +3,7 @@ export class InteractionsPage{
     sideBarElementsSelector = ".header-wrapper"
     box1Selector = '#resizableBoxWithRestriction'
     box2Selector = ''
+    
     verifyInteractionPageTitle = (value)=>{
         cy.get(this.interactionsPageTitleSelector).invoke('text').should("equal", value)
     }
@@ -28,8 +29,14 @@ export class InteractionsPage{
     verifyBoxDimensions =()=>{
         this.#getBox1()
         cy.get("@box1").then($element=>{
-            console.log($element.width())
+            
+            
+            expect($element.width()+2).equal(200)
+            expect($element.height()+2).equal(200)
         })
+    }
+    verfiyElementIsResizable = ()=>{
+        cy.get("@box1").trigger('resize',450, 450)
     }
     
 }
