@@ -13,7 +13,7 @@ describe('Automating Tasks On Demo QA Website', () => {
     homePage.visit()
   })
 
-  it.skip("Demoqa - Forms - Practice forms - Verify modal represents same image after form submission",()=>{
+  it("Demoqa - Forms - Practice forms - Verify modal represents same image after form submission",()=>{
     const formPage = new FormPage()
     homePage.clickOnFormsCard();
       cy.fixture("formData").then(formData =>{
@@ -84,7 +84,7 @@ describe('Automating Tasks On Demo QA Website', () => {
 
   })
 
-  it.skip("Demoqa - Interactions - Performing interactions",()=>{
+  it("Demoqa - Interactions - Performing interactions",()=>{
    const interactionPage = new InteractionsPage()
     homePage.verfiyTitle()
     homePage.clickOnInteractionCard()
@@ -93,6 +93,10 @@ describe('Automating Tasks On Demo QA Website', () => {
     interactionPage.clickOnResizable()
     interactionPage.verifyInteractionPageTitle("Resizable")
     interactionPage.verifyBoxDimensions()
+    interactionPage.verfiyElementIsResizable()
+    interactionPage.verfiyBox1MinumumDimension()
+    interactionPage.verifyBoxMaximumDimension()
+    interactionPage.verfiyIfBox2IsResizable()
   })
 
   it("Demoqa - Bookstore - verify the api response is correct",()=>{
