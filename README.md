@@ -14,5 +14,5 @@ select "DemoQaTests.cy.test" to run tests <br>
 **Base Url** = "https://demoqa.com/" <br>
 
 **Description** <br>
-Tests are automated using the page object model using Cypress.io.<br>
+Tests are automated using the page object model with Cypress.io.<br>
 
