@@ -23,3 +23,31 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add("verifyResizeable",(selector, positiveX, positiveY, negativeX, negativeY)=>{
+    var width = 0;
+    var height = 0
+    cy.get(selector).then($element=>{
+        width = $element.width();
+        height = $element.height();
+
+        
+    })
+    cy.get(selector).find("span",{force:true}).trigger("mousedown").trigger('mousemove', negativeX, negativeY,{force:true}).trigger('mouseup',{force:true})
+    cy.get(selector).then($element=>{
+        
+
+        expect($element.width()+2).to.be.lt(width)
+        expect($element.height()+2).to.be.lt(height)
+        width = $element.width();
+        height = $element.height();
+
+    })
+    cy.get(selector).find("span").trigger('mousedown').trigger("mousemove",positiveX,positiveY ,{force:true}).trigger('mouseup',{force:true})
+    cy.get(selector).then($element=>{
+        
+        expect($element.width()+2).to.be.gt(width)
+        expect($element.height()+2).to.be.gt(height)
+    })
+})
