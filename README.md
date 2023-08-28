@@ -2,17 +2,17 @@
 
 
 
-**Project Setup**
-Run "npm install" 
-Run "npx cypress open"
-configure E2E testing from cypress UI
+**Project Setup** <br>
+Run "npm install" <br>
+Run "npx cypress open" <br>
+configure E2E testing from cypress UI<br>
 
-**Run Tests**
-Run "npx cypress open"
-select "DemoQaTests.cy.test" to run tests
+**Run Tests**  <br>
+Run "npx cypress open" <br>
+select "DemoQaTests.cy.test" to run tests <br>
 
-**Base Url** = "https://demoqa.com/"
+**Base Url** = "https://demoqa.com/" <br>
 
-**Description**
-Tests are automated using the page object model using Cypress.io.
+**Description** <br>
+Tests are automated using the page object model using Cypress.io.<br>
 
