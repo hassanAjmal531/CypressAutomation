@@ -10,7 +10,7 @@ export class BookStorePage{
     verifyBookStorePageTitle = ()=>{
         cy.get(this.#bookstorePageTitleSelector).invoke('text').should("equal", "Book Store")
     }
-    clickOnBookAndVerifyApiResponse = (title)=>{
+    clickOnBook = (title)=>{
 
         //Intercept the get requests
         cy.intercept("GET","https://demoqa.com/BookStore/v1/Book?ISBN=9781593277574").as("bookData")

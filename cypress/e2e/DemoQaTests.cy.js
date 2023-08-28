@@ -3,6 +3,7 @@ import { HomePage } from "../Pages/HomePage";
 import { FormPage } from "../Pages/FormsPage";
 import { InteractionsPage } from "../Pages/InteractionsPage";
 import { BookStorePage } from "../Pages/BookStorePage";
+
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false;
 });
@@ -47,8 +48,6 @@ describe('Automating Tasks On Demo QA Website', () => {
     interactionPage.verfiyBox1MinumumDimension()
     interactionPage.verifyBoxMaximumDimension()
     interactionPage.verfiyElementIsResizable("box2")
-
-    // interactionPage.verfiyIfBox2IsResizable()
   })
 
   it("Demoqa - Bookstore - verify book details and api response is correct",()=>{
@@ -56,7 +55,7 @@ describe('Automating Tasks On Demo QA Website', () => {
     homePage.verfiyTitle("Toolsqa")
     homePage.clickONBookStoreCard()
     bookstorePage.verifyBookStorePageTitle()
-    bookstorePage.clickOnBookAndVerifyApiResponse("Understanding ECMAScript 6")
+    bookstorePage.clickOnBook("Understanding ECMAScript 6")
     bookstorePage.verifyBookDetails()
 
 
