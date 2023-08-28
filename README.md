@@ -3,7 +3,7 @@
 
 
 **Project Setup**
-Run "npm install"
+Run "npm install" 
 Run "npx cypress open"
 configure E2E testing from cypress UI
 
